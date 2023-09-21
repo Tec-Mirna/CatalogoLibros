@@ -5,14 +5,14 @@
 
 <MudLayout>
 
-    <MudAppBar Elevation="1" Class="indigo">
+    <MudAppBar Elevation="1" Class="teal">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudText Typo="Typo.h5" Class="ml-3">Catalogo Libros</MudText>
+        <MudText Typo="Typo.h5" Class="ml-3">Catálogo de Libros</MudText>
         <MudSpacer />
         <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
     </MudAppBar>
 
-    <MudDrawer Class="pa-4 indigo lighten-3 shades-text text-white" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+    <MudDrawer Class="pa-4 green lighten-3 shades-text text-teal" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="1">
         <NavMenu></NavMenu>
     </MudDrawer>
 
