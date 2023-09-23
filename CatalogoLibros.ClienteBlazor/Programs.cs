@@ -20,6 +20,7 @@ namespace CatalogoLibros.ClienteBlazor
             builder.Services.AddScoped<ICategoriaService, CategoriaService>();
             builder.Services.AddScoped<IGeneroService, GeneroService>();
             builder.Services.AddScoped<IAutorService, AutorService>();
+            builder.Services.AddScoped<ILibroService, LibroService>();//En esta van los dos la de Interfas y la clase de libro.
 
             builder.Services.AddMudServices(); /*Importacion de los servicios de MudBlazor*/
 
