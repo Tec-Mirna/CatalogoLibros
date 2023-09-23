@@ -1,5 +1,17 @@
-﻿<h3>Libros</h3>
+﻿@page "/libros"
+@using Models
+@using Services
+@inject ILibroService LibroService
+
+<MudText Typo="Typo.h4">Libros</MudText>
+
+@if (libros)
 
 @code {
+    IEnumerable<Libro> libros = new List<Libro>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        libros = await LibroService.GetAll();
+    }
 }
