@@ -3,8 +3,36 @@
 @using Services
 @inject IAutorService AutorService
 
-<MudText Typo="Typo.h4">Autores</MudText>
+
+<MudText Typo ="Typo.h3">Autores</MudText>
+
+
+@if (autor == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <MudCard>
+        <MudCardHeader Class="blue lighten-2">
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">@autor.Nombre</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+       
+       
+    </MudCard>
+}
 
 @code {
+    [Parameter]
+    public int id { get; set; }
 
+    Autor autor = new Autor();
+
+  //  protected override async Task OnInitializedAsync()
+  //  {
+   //     if (id > 0)
+   //         autor = await AutorService.GetById(id);
+  //  }
 }

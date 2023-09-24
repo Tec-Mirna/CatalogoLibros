@@ -17,8 +17,8 @@ namespace CatalogoLibros.ClienteBlazor
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7233/api/") });//url que conecta con el backend
 
-            builder.Services.AddScoped<ICategoriaService, CategoriaService>();
-            builder.Services.AddScoped<IGeneroService, GeneroService>();
+          //  builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+          //  builder.Services.AddScoped<IGeneroService, GeneroService>();
             builder.Services.AddScoped<IAutorService, AutorService>();
             builder.Services.AddScoped<ILibroService, LibroService>();//En esta van los dos la de Interfas y la clase de libro.
 
