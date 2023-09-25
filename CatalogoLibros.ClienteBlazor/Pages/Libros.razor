@@ -22,6 +22,7 @@ else
                         </CardHeaderContent>
                     </MudCardHeader>
                     <MudCardActions>
+                         <img src="@item.Imagen" alt="@item.Nombre" Elevation="25" class="rounded-lg" width="60%" height="auto" />
                         <MudButton Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
                     </MudCardActions>
                 </MudCard>

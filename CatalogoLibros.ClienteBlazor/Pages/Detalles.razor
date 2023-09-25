@@ -3,7 +3,7 @@
 @using Services
 @inject ILibroService LibroService
 
-<MudText Typo="Typo.h5">Detalles del Libro</MudText>
+<MudText Class="text-center" Typo="Typo.h5">Detalles del Libro</MudText>
 
 @if (libro == null)
 {
@@ -18,8 +18,13 @@ else
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardActions Class="center">
-            <img src="@libro.Imagen" alt="@libro.Nombre" Elevation="25" class="rounded-lg" width="60%" height="auto" />
+            <img src="@libro.Imagen" alt="@libro.Nombre" Elevation="25" class="rounded-lg" width="60%" height="300" />
         </MudCardActions>
+        <MudCardContent>
+            <MudText Typo="Typo.body2"><b>Fecha de Publicación:</b>@libro.FechaPublicacion</MudText>
+            <br>
+            <MudText Typo="Typo.body2"><b>Páginas:</b>@libro.NumPaginas</MudText>
+         </MudCardContent>
     </MudCard>
 }
 @code {
