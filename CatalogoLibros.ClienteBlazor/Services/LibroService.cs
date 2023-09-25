@@ -12,7 +12,7 @@ namespace CatalogoLibros.ClienteBlazor.Services
     public class LibroService : ILibroService
     {
 
-        //inyección de dependencias de HttpClient
+        //inyección de dependencias de HtttpClient
         private readonly HttpClient _httpClient;
         public LibroService(HttpClient httpClient)
         {
@@ -21,6 +21,7 @@ namespace CatalogoLibros.ClienteBlazor.Services
 
         //configurar las opciones del Serializador
         JsonSerializerOptions options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
         public async Task<IEnumerable<Libro>> GetAll()
         {
             string resp = await _httpClient.GetStringAsync($"Libro");
@@ -29,21 +30,21 @@ namespace CatalogoLibros.ClienteBlazor.Services
 
         public async Task<IEnumerable<Libro>> GetByAutor(int idLibro)
         {
-            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", new { IdAutor = idLibro });
+            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", new { idAutor = idLibro });
             string respString = await resp.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<IEnumerable<Libro>>(respString, options);
+            return JsonSerializer.Deserialize<IEnumerable<Libro>>(respString, options); 
         }
 
         public async Task<IEnumerable<Libro>> GetByCategoria(int idLibro)
         {
-            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", new { IdCategoria = idLibro }); 
+            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", new { idCategoria = idLibro });
             string respString = await resp.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<IEnumerable<Libro>>(respString, options);
         }
 
         public async Task<IEnumerable<Libro>> GetByGenero(int idLibro)
         {
-            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", new { IdGenero = idLibro });
+            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", new { idGenero = idLibro });
             string respString = await resp.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<IEnumerable<Libro>>(respString, options);
         }

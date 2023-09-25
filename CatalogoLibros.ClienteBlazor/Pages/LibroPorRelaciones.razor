@@ -1,0 +1,45 @@
+﻿@page "/libroxrelaciones/{id:int}"
+@using Models
+@using Services
+@inject ILibroService LibroService
+
+<MudText Typo="Typo.h4">Libros</MudText>
+
+@if (libros == null)
+{
+    <p>Cargando...</p>
+}
+else
+{
+    <MudGrid> 
+        @foreach (var item in libros)
+        {
+            <MudItem xs="12" sm="10" md="6" lg="4">
+                <MudCardHeader Class="blue lighten-1">
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">@item.Nombre</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardActions>
+                    <MudButton Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
+                </MudCardActions>
+            </MudItem>
+        }
+    </MudGrid>
+}
+
+@code {
+    [Parameter]//para resivir los parametros
+    public int id { get; set; }
+
+    IEnumerable<Libro> libros = new List<Libro>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (id > 0)
+            libros = await LibroService.GetByAutor(id);
+            libros = await LibroService.GetByCategoria(id);  
+            libros = await LibroService.GetByGenero(id);  
+    }
+
+}

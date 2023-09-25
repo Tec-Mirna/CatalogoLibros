@@ -4,35 +4,31 @@
 @inject IAutorService AutorService
 
 
-<MudText Typo ="Typo.h3">Autores</MudText>
+<MudText Typo="Typo.h3">Autores</MudText>
 
-
-@if (autor == null)
-{
-    <p><em>Cargando...</em></p>
-}
-else
-{
-    <MudCard>
-        <MudCardHeader Class="blue lighten-2">
-            <CardHeaderContent>
-                <MudText Typo="Typo.h6">@autor.Nombre</MudText>
-            </CardHeaderContent>
-        </MudCardHeader>
-       
-       
-    </MudCard>
-}
+<MudGrid>
+    @foreach (var item in autor)
+    {
+        <MudItem xs="12" sm="10" md="6" lg="4">
+            <MudCard>
+                <MudCardHeader Class="blue darken-1">
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">@item.Nombre</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardActions>
+                    <MudButton Link="@($"/libroxrelaciones/{item.Id}")" Variant="Variant.Outlined" Color="Color.Tertiary" Class="text-center">Ver libros</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    }
+</MudGrid>
 
 @code {
-    [Parameter]
-    public int id { get; set; }
+    IEnumerable<Autor> autor = new List<Autor>();
 
-    Autor autor = new Autor();
-
-  //  protected override async Task OnInitializedAsync()
-  //  {
-   //     if (id > 0)
-   //         autor = await AutorService.GetById(id);
-  //  }
+    protected override  async Task OnInitializedAsync()
+    {
+        autor = await AutorService.GetAll();
+    }
 }
