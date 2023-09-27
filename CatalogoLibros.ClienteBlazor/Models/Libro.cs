@@ -15,5 +15,8 @@ namespace CatalogoLibros.ClienteBlazor.Models
         public string Imagen { get; set; }
         public int NumPaginas { get; set; }
         public string FechaPublicacion { get; set; }
+        public string Descripcion { get; set; }
+
+       
     }
 }
