@@ -131,6 +131,19 @@ h2{
 .text{
     margin-right:10px;
 }
-
-
+ .center{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+   
+}
+h6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Descri{
+    display:flex;
+    text-align:center;
+}
    
