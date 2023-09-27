@@ -11,13 +11,13 @@
     {
         <MudItem xs="12" sm="10" md="6" lg="4">
             <MudCard>
-                <MudCardHeader Class="blue darken-1">
+                <MudCardHeader Class="teal ">
                     <CardHeaderContent>
-                        <MudText Typo="Typo.h6">@item.Nombre</MudText>
+                        <MudText  Typo="Typo.h6"  Style="color:#F2F3F4">@item.Nombre</MudText>
                     </CardHeaderContent>
                 </MudCardHeader>
                 <MudCardActions>
-                    <MudButton Link="@($"/libroxrelaciones/{item.Id}")" Variant="Variant.Outlined" Color="Color.Tertiary" Class="text-center">Ver libros</MudButton>
+                    <MudButton Link="@($"/libroxrelaciones/{item.Id}")" Variant="Variant.Outlined" Color="Color.Tertiary" Class="text-center">Ver libro</MudButton>
                 </MudCardActions>
             </MudCard>
         </MudItem>
