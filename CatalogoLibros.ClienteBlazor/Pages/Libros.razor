@@ -25,9 +25,10 @@ else
                          <img src="@item.Imagen" alt="@item.Nombre" Elevation="50" class="center" width="80%" height="350" />
                         
                     </MudCardActions>
+
                     <MudCardActions>
-                    <MudButton Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
-                    <MudButton Link="@($"/contenidolibro/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Leer</MudButton>
+                    <MudButton Class="btn" Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Info">Detalles</MudButton>&nbsp; &nbsp; &nbsp;
+                    <MudButton Class="btn" Link="@($"/contenidolibro/{item.Id}")" Variant="Variant.Outlined" Color="Color.Info">Leer</MudButton>
                        </MudCardActions>
                 </MudCard>
 

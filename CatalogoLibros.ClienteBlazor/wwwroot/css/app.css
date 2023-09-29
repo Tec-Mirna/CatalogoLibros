@@ -146,4 +146,9 @@ h6 {
     display:flex;
     text-align:center;
 }
+.btn {
+    margin-inline: 10px;
+    color:white;
+    background: #0071c1;
+}
    
