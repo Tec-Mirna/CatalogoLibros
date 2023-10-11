@@ -1,18 +1,24 @@
 ﻿@inherits LayoutComponentBase
-
+<head>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
 
 <MudThemeProvider />
 
 <MudLayout>
 
-    <MudAppBar Elevation="1" Class="teal">
+    <MudAppBar Elevation="1" Class="black">
+
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+
         <MudText Typo="Typo.h5" Class="ml-3">Catálogo de Libros</MudText>
+
         <MudSpacer />
         <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+
     </MudAppBar>
 
-    <MudDrawer Class="pa-4 green lighten-3 shades-text text-teal" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="1">
+    <MudDrawer Class="pa-4   shades-text text-white" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="1">
         <NavMenu></NavMenu>
     </MudDrawer>
 
@@ -32,3 +38,9 @@
         _drawerOpen = !_drawerOpen;
     }
 }
+<style>
+    /*.mud-drawer {
+    background-color:white;
+    color:blue;
+    }*/
+</style>

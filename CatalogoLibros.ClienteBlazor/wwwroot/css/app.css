@@ -83,7 +83,7 @@ a, .btn-link {
 }*/
 .title {
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 4.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,13 +105,14 @@ h2{
 }
 
 .border {
-    color: white;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black, -1px 1px 0 black;
+    color: deepskyblue;
+    border:none;
+    text-shadow: -2px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black, -1px 1px 0 black;
    
 }
 .weave{
     color:black;
-    border-color:black;
+    border-color:blue;
     animation: wave 3s ease-in-out infinite;
 }
 @keyframes wave {
@@ -125,18 +126,24 @@ h2{
     align-items:center;
 }
 .imagen{
-    width:950px;
-    height:450px;
+    width:800px;
+    height:300px;
 }
+
 .text{
     margin-right:10px;
 }
- .center{
+.center {
     display: flex;
-    justify-content:center;
-    align-items:center;
-   
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    transition: 1s;
 }
+ .center img:hover{
+     transform:scaleY(0.9);
+     transition:1s;
+ }
 h6 {
     display: flex;
     justify-content: center;
@@ -144,11 +151,56 @@ h6 {
 }
 .Descri{
     display:flex;
-    text-align:center;
+    justify-content:start;
+    align-items:start;
+    font-size:x-large;
 }
-.btn {
-    margin-inline: 10px;
-    color:white;
+/*DISEÑO DE BOTONES DE LA VISTA DEL CATÁLOGO*/
+
+/*Diseño del botón LEER*/
+.btns {
+    margin-inline:0px;
+    border-color:blue;
+    color: lightyellow;
     background: #0071c1;
+    width:100px;
 }
-   
+.btns:hover{
+    background-color:white;
+    color:blue;
+    border-color:blue;
+}
+/*Diseño del botón DETALLES*/
+.btn {
+    margin-inline: 0px;
+    border-color: #808080;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100px;
+}
+    .btn:hover{
+        color: #808080;
+        border-color: #808080;
+    }
+
+/*DISEÑO DE MENU LATERAL*/
+.mud-drawer{
+    color:#0071c1;
+    
+}
+/*DISEÑO DE LAS CARDS*/
+.card{
+    transition:2s;
+    border-radius:10px;
+}
+    .card:hover {
+        /* transform: scale(0.9);*/
+        transform: translateY(16px);
+        box-shadow: 2px 4px 22px rgba(0,0,0,0.9);
+        transition: 2s;
+    }
+.titulo{
+    color:#fff;
+}
+.atras {
+    background:blue;
+}
