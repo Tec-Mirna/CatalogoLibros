@@ -4,8 +4,6 @@
 @using Services
 @inject ILibroService LibroService
 
-@*<MudText Class="text-center" Typo="Typo.h5">Detalles del Libro</MudText>*@
-
 @if (libro == null)
 {
     <p><em>Cargando...</em></p>
@@ -21,20 +19,8 @@ else
         </MudCardHeader>
 
         <MudCardContent Class="center">
-           @* <MudText class="center" src="@libro.Contenido" alt="@libro.Contenido" Elevation="25"  width="25%" height="350" />*@
-            @*<MudText Typo="Typo.body2"><b></b>@libro.Contenido</MudText>*@
-           @* < embed src="@libro.Contenido" style="width=100%; height=2100px;" />*@
-            <embed src="@libro.Contenido" style="width:100%; height:600px" type="application/pdf"/>
+            <embed src="@libro.Contenido" style="width:600%; height:600px" type="application/pdf"/>
         </MudCardContent>
-
-        @*<MudCardContent>
-            <MudText Typo="Typo.body2"><b>Fecha de Publicación:</b>@libro.FechaPublicacion</MudText>
-            <br>
-            <MudText Typo="Typo.body2"><b>Páginas:</b>@libro.NumPaginas</MudText>
-            <br>
-            <MudText class="Descri" Typo="Typo.body2"><b>Descripción: </b>@libro.Descripcion</MudText>
-         </MudCardContent>*@
-
          <MudCardActions>
              <MudButton Variant="Variant.Filled" Href="libros" Color="Color.Secondary">Atrás</MudButton>
          </MudCardActions>
