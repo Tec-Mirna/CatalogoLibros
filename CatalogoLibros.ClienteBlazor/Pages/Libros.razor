@@ -15,6 +15,14 @@
 }
 else
 {
+    <form>
+    <MudTextField class="entrada" @bind-Value="searchTerm" Variant="Variant.Filled"  style="width: 98%; height: 50px; border:2px solid #0000FF;border-radius:25px; background-color:#ffffff; color:black;" Label="Escribir nombre de un libro">     
+    </MudTextField>
+   <MudButton class="buscar" OnClick="GetByCategoria" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Search" Style="background-color:blue; color=:white;   display:inline-block;" />
+    @*<MudButton class="buscar" OnClick="GetByCategoria" >Buscar</MudButton>*@
+   
+    </form>
+    <br />
     <MudGrid>
         @foreach (var item in libros)
         {
@@ -43,10 +51,15 @@ else
 
 @code {
     IEnumerable<Libro> libros = new List<Libro>();
+    private string searchTerm = "";
+    private async Task GetByCategoria()
+    {
+        libros = await LibroService.GetByCategoria(searchTerm);
+    }
 
     protected override async Task OnInitializedAsync()
     {
-        libros = await LibroService.GetAll();
+        libros = await LibroService.GetByCategoria(searchTerm);
     }
 }
 <style>
@@ -54,4 +67,63 @@ else
         color:#fff;
     }
 </style>
+ 
+@*<style>
+    .mud-grid{
+      overflow-y:scroll;
+      scroll-behavior:smooth;
+    }
+</style>*@
+<style>
+    .buscar{
+        background-color:blue;
+        color:white;
+        width:200px;
+        height:50px;
+        border-radius:25px;
+    }
+    .buscar:hover{
+        background-color:blue;
+        color:white;
+        border:3rem;
+        border-color:blue;
+    }
+    /*.entrada{
+         width:200px;
+
+    }*/
+</style>
+
+<style>
+    mud-text-field{
+        background-color:#f2f2f2;
+        color:#333;
+        display:inline-block;
+    }
+    mud-button{
+        background-color:blue;
+        color:white;
+        border:none;
+        padding:15px 32px;
+        display:inline-block;
+        cursor:pointer;
+        text-align:center;
+        text-decoration:none;
+        font-size:16px;
+        margin:4px 2px;
+    }
+   /*#tarjeta{
+       padding:10px;
+       margin-top:10px;
+   }*/
+   form{
+       display:flex;
+   }
+   .MudTextField, .MudButton {
+  vertical-align: top;
+}
+
+   
+</style>
+
 

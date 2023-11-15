@@ -10,7 +10,7 @@ namespace CatalogoLibros.ClienteBlazor.Services
     {
         Task<IEnumerable<Libro>> GetAll();
         Task<IEnumerable<Libro>> GetByAutor(int idLibro);
-        Task<IEnumerable<Libro>> GetByCategoria(int idLibro);
+        Task<IEnumerable<Libro>> GetByCategoria(string nombreCategoria);
         Task<IEnumerable<Libro>> GetByGenero(int idLibro);
         Task<Libro> GetById(int id);
     }

@@ -3,7 +3,9 @@
 @using Models
 @using Services
 @inject ILibroService LibroService
-
+<head>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
 @*<MudText Class="text-center" Typo="Typo.h5">Detalles del Libro</MudText>*@
 
 @if (libro == null)
@@ -14,7 +16,7 @@ else
 {
     <MudCard>
 
-        <MudCardHeader Class="teal ">
+        <MudCardHeader Class="black">
             <CardHeaderContent>
                 <MudText  Typo="Typo.h6">@libro.Nombre</MudText>
             </CardHeaderContent>
@@ -36,7 +38,7 @@ else
          </MudCardContent>*@
 
          <MudCardActions>
-             <MudButton Variant="Variant.Filled" Href="libros" Color="Color.Secondary">Atrás</MudButton>
+             <MudButton Class="atras" Variant="Variant.Filled" Href="libros">Atrás</MudButton>
          </MudCardActions>
 
     </MudCard>
@@ -54,3 +56,15 @@ else
         libro = await LibroService.GetById(id);
     }
 }
+<style>
+    .mud-button{
+        background:blue;
+        color:#fff;
+    }
+    .mud-button:hover{
+        background:#fff;
+        color:blue;
+        border-color:blue;
+    }
+</style>
+

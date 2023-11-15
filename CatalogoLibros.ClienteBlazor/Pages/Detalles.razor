@@ -15,7 +15,7 @@
 else
 {
     <MudCard>
-        <MudCardHeader Class="teal">
+        <MudCardHeader Class="black">
             <CardHeaderContent>
                 <MudText Class="titulo" Typo="Typo.h6">@libro.Nombre</MudText>
             </CardHeaderContent>
@@ -28,10 +28,17 @@ else
             <br>
             <MudText  class="Descri" Typo="Typo.body2"><b>Páginas:</b>@libro.NumPaginas</MudText>
             <br>
+             <MudText class="Descri" Typo="Typo.body2"><b>Genero: </b>@libro.IdGenero</MudText>
+             <br>
+            <MudText class="Descri" Typo="Typo.body2"><b>Autor: </b>@libro.IdAutor</MudText>
+            <br>
+            <MudText class="Descri" Typo="Typo.body2"><b>Categoria: </b>@libro.Nombre</MudText>
+            <br>
             <MudText class="Descri" Typo="Typo.body2"><b>Descripción: </b>@libro.Descripcion</MudText>
+          
          </MudCardContent>
          <MudCardActions>
-             <MudButton Class="atras" Variant="Variant.Filled" Href="libros">Atrás</MudButton>
+             <MudButton class="atras" Variant="Variant.Filled" Href="libros">Atrás</MudButton>
          </MudCardActions>
     </MudCard>
 }
@@ -40,6 +47,8 @@ else
     public int id { get; set; }
 
     Libro libro = new Libro();
+
+    
 
     protected override async Task OnInitializedAsync()
     {

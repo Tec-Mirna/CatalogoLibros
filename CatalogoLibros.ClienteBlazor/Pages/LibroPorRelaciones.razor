@@ -31,6 +31,7 @@ else
 @code {
     [Parameter]//para resivir los parametros
     public int id { get; set; }
+    //public string IdCategoria { get; set; }
 
     IEnumerable<Libro> libros = new List<Libro>();
 
@@ -38,7 +39,7 @@ else
     {
         if (id > 0)
             libros = await LibroService.GetByAutor(id);
-            libros = await LibroService.GetByCategoria(id);  
+            //libros = await LibroService.GetByCategoria(id);  
             libros = await LibroService.GetByGenero(id);  
     }
 

@@ -35,9 +35,10 @@ namespace CatalogoLibros.ClienteBlazor.Services
             return JsonSerializer.Deserialize<IEnumerable<Libro>>(respString, options); 
         }
 
-        public async Task<IEnumerable<Libro>> GetByCategoria(int idLibro)
+        public async Task<IEnumerable<Libro>> GetByCategoria(string nombreCategoria)
         {
-            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", new { idCategoria = idLibro });
+            var categoria = new Categoria { Nombre = nombreCategoria };
+            var resp = await _httpClient.PostAsJsonAsync($"Libro/Buscar", categoria);
             string respString = await resp.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<IEnumerable<Libro>>(respString, options);
         }
