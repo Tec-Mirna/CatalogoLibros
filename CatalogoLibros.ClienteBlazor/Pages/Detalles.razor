@@ -2,7 +2,6 @@
 @using Models
 @using Services
 @inject ILibroService LibroService
-
 <head>
     <link rel="stylesheet" href="css/app.css"/>
 </head>
@@ -13,11 +12,11 @@
     <p><em>Cargando...</em></p>
 }
 else
-{
+{   
     <MudCard>
         <MudCardHeader Class="black">
             <CardHeaderContent>
-                <MudText Class="titulo" Typo="Typo.h6">@libro.Nombre</MudText>
+                <MudText class="titulo" Typo="Typo.h6">@libro.Nombre</MudText>
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardActions Class="center">
@@ -28,7 +27,7 @@ else
             <br>
             <MudText  class="Descri" Typo="Typo.body2"><b>Páginas:</b>@libro.NumPaginas</MudText>
             <br>
-             <MudText class="Descri" Typo="Typo.body2"><b>Genero: </b>@libro.IdGenero</MudText>
+             <MudText  class="Descri" Typo="Typo.body2"><b>Genero: </b>@libro.IdGenero</MudText>
              <br>
             <MudText class="Descri" Typo="Typo.body2"><b>Autor: </b>@libro.IdAutor</MudText>
             <br>
@@ -41,14 +40,13 @@ else
              <MudButton class="atras" Variant="Variant.Filled" Href="libros">Atrás</MudButton>
          </MudCardActions>
     </MudCard>
+    }
 }
 @code {
     [Parameter]
     public int id { get; set; }
 
     Libro libro = new Libro();
-
-    
 
     protected override async Task OnInitializedAsync()
     {
@@ -65,6 +63,9 @@ else
         background:#fff;
         color:blue;
         border-color:blue;
+    }
+    .titulo{
+        color:white;
     }
 
 </style>

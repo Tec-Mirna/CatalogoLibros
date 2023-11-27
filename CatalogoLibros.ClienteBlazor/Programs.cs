@@ -16,6 +16,7 @@ namespace CatalogoLibros.ClienteBlazor
             //builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7233/api/") });//url que conecta con el backend
+            //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://www.backend.com/api/") });//url que conecta con el backend
 
             builder.Services.AddScoped<ICategoriaService, CategoriaService>();
             builder.Services.AddScoped<IGeneroService, GeneroService>();
