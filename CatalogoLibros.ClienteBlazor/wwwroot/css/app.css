@@ -96,28 +96,27 @@ p{
     font-size:1.0rem;
     color:black;
 }
-/*img{
+img{
     height:350px;
-}*/
-/*h1{
+}
+h1{
     font-size:3rem;
     position:absolute;
     font-family:Arial;
-}*/
+}
 
-/*.border {
-    color:darkblue; deepskyblue
+.border {
+    color:darkblue;
     border:none;
     text-shadow: -2px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black, -1px 1px 0 black;
    
-}*/
+}
 .weave {
     color: darkblue;
     border-color: blue;
     font-size: 3rem;
     font-weight:bolder;
-    /*    animation: wave 3s ease-in-out infinite;
-*/
+    animation: wave 3s ease-in-out infinite;
 }
 @keyframes wave {
     0%, 100% {
@@ -164,7 +163,7 @@ h6 {
 /*Diseño del botón LEER*/
 .btns {
     margin-inline: 0px;
-    border-color: blue;
+    border-color: limegreen;
     color: white;
     background:blue; /*#0071c1*/
      
@@ -172,11 +171,11 @@ h6 {
      justify-content:center;
      align-content:center;
 }
-.btns:hover{
-    background-color:white;
-    color:blue;
-    border-color:blue;
-}
+    .btns:hover {
+        background-color: white;
+        color: white;
+        border-color: limegreen;
+    }
 /*Diseño del botón DETALLES*/
 .btn {
     margin-inline: 0px;
@@ -196,7 +195,7 @@ h6 {
 }
 /*DISEÑO DE LAS CARDS*/
 .card{
-   
+    height:5%;
     transition:2s;
     border-radius:10px;
 }
