@@ -4,7 +4,7 @@
 @inject ILibroService LibroService
 
 <head>
-     <link rel="stylesheet" href="css/app.css"/>
+     <link rel="stylesheet" href="css/app.css"/>  
 </head>
 
 @*<MudText Typo="Typo.h4">Libros</MudText>*@
@@ -23,24 +23,24 @@ else
    
     </form>
     <br />
-    <MudGrid>
+   <MudGrid class="book">
         @foreach (var item in libros)
         {
             <MudItem xs="12" sm="10" md="6" lg="4">
-                <MudCard Class="card">
-                    <MudCardHeader Class="MyApp" style="background-color:black">
-                        <CardHeaderContent>
-                            <MudText class="titulo" Typo="Typo.h6">@item.Nombre</MudText>
+                <MudCard>
+                    <MudCardHeader Class="MyApp"> @*style="background-color:black"*@
+                    <CardHeaderContent>
+                            <MudText class="namebook" Typo="Typo.h6">@item.Nombre</MudText>
                         </CardHeaderContent>
                     </MudCardHeader>
                     <MudCardActions>
-                         <img src="@item.Imagen" alt="@item.Nombre" Elevation="50" class="center" style="width:100%;height:255px;"/>
+                         <img src="@item.Imagen" alt="@item.Nombre" Elevation="50" class="center" style="width:100%;height:350px;"/>
                         
                     </MudCardActions>
 
                     <MudCardActions>
                     @*<MudButton Class="btn" Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Dark">Detalles</MudButton>&nbsp; &nbsp; &nbsp;*@
-                    <MudButton id="leer" Class="btns" Link="@($"/contenidolibro/{item.Id}")" Variant="Variant.Outlined">Leer</MudButton>
+                    <MudButton id="read" Class="btns" Link="@($"/contenidolibro/{item.Id}")" Variant="Variant.Outlined">Leer</MudButton>
                        </MudCardActions>
                 </MudCard>
 
@@ -74,12 +74,7 @@ else
     }
 </style>
  
-@*<style>
-    .mud-grid{
-      overflow-y:scroll;
-      scroll-behavior:smooth;
-    }
-</style>*@
+
 <style>
     .buscar{
         background-color:blue;
@@ -94,10 +89,7 @@ else
         border:3rem;
         border-color:blue;
     }
-    /*.entrada{
-         width:200px;
-
-    }*/
+    
 </style>
 
 <style>
@@ -128,16 +120,17 @@ else
    .MudTextField, .MudButton {
   vertical-align: top;
 }
-#leer{
+#read{
     width:100%;
-    height:45px;
-    background-color: green;
+    height:50px;
+    background-color: darkblue;
 }
 
-leer:hover{
-    color: white;
-}
-   
+  .namebook{
+      color:black;
+      font-weight:600;
+  }
+  
 </style>
 
 

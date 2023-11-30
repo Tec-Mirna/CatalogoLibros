@@ -163,7 +163,7 @@ h6 {
 /*Diseño del botón LEER*/
 .btns {
     margin-inline: 0px;
-    border-color: limegreen;
+    border-color: darkblue;
     color: white;
     background:blue; /*#0071c1*/
      
@@ -171,11 +171,11 @@ h6 {
      justify-content:center;
      align-content:center;
 }
-    .btns:hover {
+    /*.btns:hover {
         background-color: white;
         color: white;
-        border-color: limegreen;
-    }
+        border-color: darkblue;
+    }*/
 /*Diseño del botón DETALLES*/
 .btn {
     margin-inline: 0px;
@@ -193,23 +193,9 @@ h6 {
     color:#0071c1;
     
 }
-/*DISEÑO DE LAS CARDS*/
-.card{
-    height:5%;
-    transition:2s;
-    border-radius:10px;
+
+.tit
+{
+    color:black;
+    box-shadow:none;
 }
-    .card:hover {
-        /* transform: scale(0.9);*/
-       /* transform: translateY(16px);*/
-        transform: scaleY(0.9);
-        transition: 1s;
-        box-shadow: 3px 5px 23px rgba(0,0,0,0.9);
-        transition: 2s;
-    }
-.titulo{
-    color:  white;
-}
-/*.atras {
-    background:blue;
-}*/
