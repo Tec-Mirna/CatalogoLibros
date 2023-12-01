@@ -26,15 +26,16 @@ else
    <MudGrid class="book">
         @foreach (var item in libros)
         {
+            
             <MudItem xs="12" sm="10" md="6" lg="4">
-                <MudCard>
+                <MudCard Outlined="true" style="border:solid  1px #000;">
                     <MudCardHeader Class="MyApp"> @*style="background-color:black"*@
                     <CardHeaderContent>
                             <MudText class="namebook" Typo="Typo.h6">@item.Nombre</MudText>
                         </CardHeaderContent>
                     </MudCardHeader>
                     <MudCardActions>
-                         <img src="@item.Imagen" alt="@item.Nombre" Elevation="50" class="center" style="width:100%;height:350px;"/>
+                         <img src="@item.Imagen" alt="@item.Nombre" Elevation="50"  style="width:100%;height:350px;"/>
                         
                     </MudCardActions>
 
@@ -45,6 +46,7 @@ else
                 </MudCard>
 
             </MudItem>
+            
         }
     </MudGrid>
 }
@@ -81,7 +83,7 @@ else
         color:white;
         width:150px;
         height:50px;
-        border-radius:25px;
+        border-radius:7px;
     }
     .buscar:hover{
         background-color:blue;
@@ -122,8 +124,8 @@ else
 }
 #read{
     width:100%;
-    height:50px;
-    background-color: darkblue;
+    height:45px;
+    background-color: blue;
 }
 
   .namebook{
