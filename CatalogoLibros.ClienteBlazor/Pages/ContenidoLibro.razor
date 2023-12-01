@@ -16,7 +16,7 @@ else
 {
     <MudCard>
 
-        <MudCardHeader Class="black">
+        <MudCardHeader>
             <CardHeaderContent>
                 <MudText class="titulo"  Typo="Typo.h6">@libro.Nombre</MudText>
             </CardHeaderContent>
@@ -38,7 +38,7 @@ else
          </MudCardContent>*@
 
          <MudCardActions>
-             <MudButton Class="atras" Variant="Variant.Filled" Href="libros">Atrás</MudButton>
+             <MudButton class="volver" Variant="Variant.Filled" Href="libros">Regresar</MudButton>
          </MudCardActions>
 
     </MudCard>
@@ -67,7 +67,16 @@ else
         border-color:blue;
     }
     .titulo{
+        color:black;
+    }
+    .volver{
+        background-color: #6aaf00;
         color:white;
+    }
+    .volver:hover{
+        background-color:white;
+        color:#6aaf00;
+        border:solid 2px #6aaf00;
     }
 </style>
 
